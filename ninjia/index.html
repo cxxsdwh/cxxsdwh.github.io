@@ -1,0 +1,153 @@
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta http-equiv="Content-Type" content="charset=utf-8" />
+</head>
+<title>Moving an Image</title>
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+            <title>Title</title>
+            </head>
+    <body onKeyPress="ProcessKeypress(event);">
+        
+        <p> <img id="back" style="z-index: 0; left: 0px; position: absolute; top: 0px"
+            height=350 width=650 align=baseline border=0 hspace=0 src="back.png">
+            <img id="saucer" style="z-index: 0; left: 100px; position: absolute; top: 250px"
+                height=100 width=80 align=baseline border=0 hspace=0 src="saucer.png">
+                <img id="ball1" style="z-index: 0; left: 200px; position: absolute; top: 0px"
+                    height=200 width=50 align=baseline border=0 hspace=0 src="ball1.png">
+                    <img id="ball2" style="z-index: 0; left: 300px; position: absolute; top: 0px"
+                        height=100 width=50 align=baseline border=0 hspace=0 src="ball.png">
+                        <img id="ball3" style="z-index: 0; left: 400px; position: absolute; top: 0px"
+                            height=100 width=50 align=baseline border=0 hspace=0 src="ball.png">
+                            <img id="ball4" style="z-index: 0; left: 500px; position: absolute; top: 0px"
+                                height=100 width=50 align=baseline border=0 hspace=0 src="ball.png">
+                                <input id="button0" type="button" value="start" onclick="start()" style="z-index: 0; left: 310px; position: absolute; top: 250px"/>
+                                </p>
+                                <p style="left: 50px; position: absolute; top: 350px" id="tai">level:1</p>
+                                <input type="button" value="left" onclick="moveObj(-100)" style=" left: 0px; position: absolute; top: 350px; height:50px ;width:325px;background: transparent"/>
+                                <input type="button" value="right" onclick="moveObj(100)" style="left: 325px; position: absolute; top: 350px; height:50px ;width:325px;background:transparent"/>
+                                <p style="left: 5px; position: absolute; top: 400px" >点start开始，让忍者移动到最右端升级; 键盘A,D键或按钮控制左右移动；三条命</p>
+    </body>
+    <!-- Bootstrap core JavaScript -->
+    <script src="/app/static/vendor/jquery/jquery.min.js"></script>
+    <script src="/app/static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="/app/static/vendor/DataTables/js/datatables.min.js"></script>
+    <script src="/app/static/vendor/DataTables/js/ellipsis.js"></script>
+
+
+<script language="JavaScript">
+    var life = 3;
+    var level =1;
+    var root = 250;
+    var st = 0;
+    knight=document.getElementById("saucer");
+    ball1=document.getElementById("ball1");
+    ball2=document.getElementById("ball2");
+    ball3=document.getElementById("ball3");
+    ball4=document.getElementById("ball4");
+    function start()
+    {
+        timer1=window.setInterval("add()",150);
+        st=1;
+        document.getElementById("button0").disabled="true";
+        document.getElementById("tai").innerHTML=level;
+    }
+    function moveObj(Xpix){
+        if(st==1){
+            obj = document.getElementById("saucer");
+            px = parseInt(obj.style.left);
+            if(px>0||Xpix>0){
+                obj.style.left = px + Xpix;
+                if(px==500){
+                    level=level+1;
+                    obj.style.left=100;
+                    document.getElementById("tai").innerHTML=level;
+                }
+            }
+        }
+    }
+    function add()
+                      {
+                      
+                      var y1=parseInt(ball1.style.top);
+                      if(y1<root/2)
+                      {
+                      ball1.style.top=5+2*level+y1;
+                      }
+                      else if(parseInt(knight.style.left)==200)
+                      {
+                      over();
+                      }
+                      else
+                      {ball1.style.top=0}
+                  var y2=parseInt(ball2.style.top);
+                  if(y2<root)
+                  {
+                  ball2.style.top=24+6*level+y2;
+                  }
+                  else if(parseInt(knight.style.left)==300)
+                  {
+                  over();
+                  }
+                  else
+                  {ball2.style.top=0}
+                  var y3=parseInt(ball3.style.top);
+                  if(y3<root)
+                  {
+                  ball3.style.top=15+5*level+y3;
+                  }
+                  else if(parseInt(knight.style.left)==400)
+                  {
+                  over();
+                  }
+                  else
+                  {ball3.style.top=0}
+                  var y4=parseInt(ball4.style.top);
+                  if(y4<root)
+                  {
+                      ball4.style.top=8+6*level+y4;
+                  }
+                  else if(parseInt(knight.style.left)==500)
+                  {
+                      over();
+                  }
+                  else
+                  {ball4.style.top=0}
+                      //var t = document.getElementById("tai").innerHTML;
+                      //t=parseInt(t)+1;
+                      //document.getElementById("tai").innerHTML=t;
+                      }
+    function ProcessKeypress(e)
+                      {
+                          if(st==1){
+                      
+                      var myObj = "saucer";
+                      var moveBy = 100;
+                      
+                      if (e.keyCode) keycode=e.keyCode;
+                      else keycode=e.which;
+                      ch=String.fromCharCode(keycode);
+                      
+                      if(ch=='a')         moveObj(-moveBy);
+                              else if(ch=='d')     moveObj(moveBy);
+                              
+                          }
+                      }
+  function over()
+  {   life = life -1;
+      knight.style.left=100;
+      if(life==0){
+          st=0;
+          life=3
+          level=1;
+          window.clearInterval(timer1);
+          knight.style.left=100;
+          document.getElementById("button0").disabled=0;}
+  }
+                      
+</script>
+</html>

@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="charset=utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <style type="text/css">
+        <!--@import url(../style.css);-->
+        </style>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+        <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
+        <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"
+            onload="renderMathInElement(document.body,{strict:'ignore'});"></script>
+    <title>新古典经济学</title>
+    <script defer src="https://cdn.jsdelivr.net/gh/plotly/plotly.js@1.15.0/dist/plotly-basic.min.js" onload="draw();"></script>
+    <script>
+        function draw(){
+            trace1 = {
+                type: 'scatter',
+                x: [0,10],
+                y: [2,8],
+                mode: 'lines',
+                name: '总需求 式(2)',
+                line: {
+                    color: 'rgb(55, 128, 191)',
+                    width: 2
+                }
+            };
+            
+            trace2 = {
+                type: 'scatter',
+                x: [0,10],
+                y: [0,10],
+                mode: 'lines',
+                name: '总需求 式(3)',
+                line: {
+                    color: 'rgb(219, 64, 82)',
+                    width: 3
+                }
+            };
+            //var tmp = window.innerWidth;
+            var layout = {
+                title:'凯恩斯交叉图',
+                //width: Math.max(tmp*0.85,600),
+                //height: Math.max(tmp*0.8,500),
+                width: 600,
+                height: 500,
+                
+                legend: {
+                    y: 0.5,
+                    //traceorder: 'reversed',
+                    font: {size: 16},
+                    yref: 'paper',
+                },
+                xaxis: {
+                    title: '总产出'
+                },
+                yaxis: {
+                    title: '总需求'
+                }
+            };
+            
+            var data = [trace1, trace2];
+            Plotly.newPlot('myDiv', data, layout,{staticPlot: true});
+            as = {
+                        type:'scatter',
+                        x:[1,9],
+                        y:[2,8],
+                        mode:'lines',
+                        line: {
+                        color: 'rgb(219, 64, 82)',
+                        width: 3
+                        }
+            };
+            ad = {
+                        type:'scatter',
+                        x:[1,9],
+                        y:[9,1],
+                        mode:'lines',
+                        line: {
+                        color: 'rgb(55, 128, 191)',
+                        width: 3
+                        }
+            };
+            
+            dash1 = {
+                        type:'scatter',
+                        x:[0,5,5],
+                        y:[5,5,0],
+                        mode:'lines',
+                        line: {
+                        color: 'rgb(0,0,0)',
+                        width: 2,
+                        dash:'dash'
+                        }
+            };
+            lras1 = {
+                type:'scatter',
+                x:[3,3],
+                y:[0,9.5],
+                mode:'lines',
+                line: {
+                    color: 'rgb(0,0,0)',
+                    width: 3
+                }
+            };
+            names1 = {
+                        type:'scatter',
+                        x:[9,9,3,5],
+                        y:[8,1,9.5,5],
+                        marker:{
+                        color:['rgb(219, 64, 82)','rgb(55, 128, 191)','black','black','black'],
+                        size:4,
+                        },
+                        text:['短期总供给 AS','总需求 AD','长期总供给 LRAS','A'],
+                        textfont:{'size': [20, 20, 20,20,20]},
+                        textposition:['top center','bottom center','top center','top center'],
+                        showlegend:false,
+                        mode:'markers+text'
+            };
+            ad2 = {
+                type:'scatter',
+                x:[0.3,7.7],
+                y:[7.7,0.3],
+                mode:'lines',
+                line: {
+                    color: 'rgb(55, 128, 191)',
+                    width: 3
+                }
+            };
+            
+            var data=[as,ad,lras1,dash1,names1];
+            var layout = {
+                //title: 'IBM',
+                margin:{
+                    t:20
+                },
+                width: 630,
+                height: 470,
+                showtitle:false,
+                showlegend: false,
+                xaxis: {
+                    tickvals:[3,5,10],
+                    range: [0, 12],
+                    zeroline:true,
+                    showgrid: false,
+                    ticktext : ['潜在产能Y2','Y1','产出(Y)'],
+                    tickfont:{'size':20},
+                    zerolinewidth: 3
+                },
+                yaxis: {
+                    tickvals:[5,11,10.3],
+                    range: [0, 11],
+                    zeroline:true,
+                    showgrid: false,
+                    ticktext : ['π1 ','通胀 ','(π) '],
+                    tickfont:{'size':20},
+                    zerolinewidth: 3
+                }
+            }
+            Plotly.newPlot('asad', data,layout,{staticPlot: true});
+            lras2 = {
+                type:'scatter',
+                x:[5,5],
+                y:[0,9.5],
+                mode:'lines',
+                line: {
+                    color: 'rgb(0,0,0)',
+                    width: 3
+                }
+            };
+            names2 = {
+                type:'scatter',
+                x:[9,9,7.7,5,5,27/7],
+                y:[8,1,0.3,9.5,5,29/7],
+                marker:{
+                    color:['rgb(219, 64, 82)','rgb(55, 128, 191)','rgb(55, 128, 191)','black','rgb(219, 64, 82)','rgb(219, 64, 82)'],
+                    size:[4,4,4,4,15,15]
+                },
+                text:['短期总供给 AS','总需求 (AD1)','总需求 (AD2)','长期总供给 LRAS','  A',' B'],
+                textfont:{'size': [20, 20, 20, 20,20,20,20]},
+                textposition:['top center','top right','center right','top center','middle right','middle right'],
+                showlegend:false,
+                mode:'markers+text'
+            };
+            dash2 = {
+                type:'scatter',
+                x:[0,27/7,27/7],
+                y:[29/7,29/7,0],
+                mode:'lines',
+                line: {
+                    color: 'rgb(0,0,0)',
+                    width: 2,
+                    dash:'dash'
+                }
+            };
+            
+            layout['xaxis']={
+                    tickvals:[27/7,5,10],
+                    range: [0, 12],
+                    zeroline:true,
+                    showgrid: false,
+                    ticktext : ['Y2','Y1','产出(Y)'],
+                    tickfont:{'size':20},
+                    zerolinewidth: 3
+            };
+            layout['yaxis']={
+                    tickvals:[5,11,10.3,29/7],
+                    range: [0, 11],
+                    zeroline:true,
+                    showgrid: false,
+                    ticktext : ['π1 ','通胀 ','(π) ','π2 '],
+                    tickfont:{'size':20},
+                    zerolinewidth: 3
+            };
+            var data=[as,ad,ad2,lras2,dash1,dash2,names2];
+            Plotly.newPlot('shock', data,layout,{staticPlot: true});
+            as2 = {
+                type:'scatter',
+                x:[1,9],
+                y:[0,6],
+                mode:'lines',
+                line: {
+                    color: 'rgb(219, 64, 82)',
+                    width: 3
+                }
+            };
+            dash3 = {
+                type:'scatter',
+                x:[0,5,5],
+                y:[3,3,0],
+                mode:'lines',
+                line: {
+                    color: 'rgb(0,0,0)',
+                    width: 2,
+                    dash:'dash'
+                }
+            };
+            names3 = {
+                type:'scatter',
+                x:[9,9,9,7.7,5,5,27/7,5],
+                y:[8,6,1,0.3,9.5,5,29/7,3],
+                marker:{
+                    color:['rgb(219, 64, 82)','rgb(219, 64, 82)','rgb(55, 128, 191)','rgb(55, 128, 191)','black','rgb(219, 64, 82)','rgb(219, 64, 82)','rgb(219, 64, 82)'],
+                    size:[4,4,4,4,4,15,15,15]
+                },
+                text:['短期总供给 AS1','短期总供给 AS1','总需求 (AD1)','总需求 (AD2)','长期总供给 LRAS','  A',' B','  A1'],
+                textfont:{'size': [20,20, 20, 20, 20,20,20,20]},
+                textposition:['top center','top center','top right','center right','top center','middle right','middle right','middle right'],
+                showlegend:false,
+                mode:'markers+text'
+            };
+            layout['yaxis']={
+                tickvals:[5,11,10.3,29/7,3],
+                range: [0, 11],
+                zeroline:true,
+                showgrid: false,
+                ticktext : ['π1 ','通胀 ','(π) ','π2 ','π3 '],
+                tickfont:{'size':20},
+                zerolinewidth: 3
+            }
+            var data=[as,as2,ad,ad2,lras2,dash1,dash2,dash3,names3];
+            Plotly.newPlot('shock2', data,layout,{staticPlot: true});
+        }
+    </script>
+</head>
+<body>
+<div class="main-content" style="color:black;">
+<h2>新古典经济学</h2>
+<p>融合古典微观和凯恩斯宏观</p>
+<details>
+<summary>卡尔多定律</summary>
+<ol>
+    <li>一是GDP增长与制造业产出增长高度正相关，这不仅因为制造业产出在定义上就是总产出的组成部分，更是因为制造业的生产特征与经济增长之间存在因果上的联系；</li>
+    <li>二是制造业劳动生产率增长与制造业产出增长高度正相关，这特别与规模收益递增有关，这一律则有时也用最早提出者的名字梵登命名为“梵登律” (Verdoom's　Law)或译为维杜定律；</li>
+    <li>三是整个经济中的劳动生产率增长与非制造业部门的就业增长率之间存在负相关关系，因为大多数非制造业活动受制于收益递减，特别是以土地为基础的活动以及许多服务业部门的活动。</li>
+</ol>
+</details>
+<details>
+<summary>蒙代尔三角 不可能三角</summary>
+<p>独立的货币政策<br/>资本自由流动<br/>固定汇率</p>
+</details>
+
+<details>
+<summary>自动稳定器</summary>
+<p>资本主义中，无需政府的政策变动而使就业、物价、收入水平的波动减少。</p>
+<p>主要包括</p>
+<ol>
+    <li>所得税</li>
+    <li>失业补助和其他转移支付</li>
+    <li>农产品价格维系制</li>
+    <li>储蓄(边际储蓄倾向递增)</li>
+</ol>
+<p>例子</p>
+<ol>
+    <li></li>
+</ol>
+</details>
+<h3>宏观经济学</h3>
+<p>考察国民经济作为一个整体的功能，包括物品与劳动的总产量和资源的总利用量是如何决定的，以及引起总量变动的原因。</p>
+<p>经典教材：萨缪尔森《经济学》，曼昆《经济学原理》</p>
+<details>
+<summary>第一章 宏观经济指标</summary>
+<h4>GDP</h4>
+<div style="overflow:auto;">
+<table>
+<tr><td>GDP</td><td>关于产出</td><td>国内生产总值</td><td>一个国家或地区在给定时间内新增的最终产品和服务的总价值</td></tr>
+<tr><td>GNI</td><td>关于收入</td><td>国民总收入</td><td>一个国家或地区所有常住单位在给定时间内收入初次分配的结果</td></tr>
+</table></div>
+<div style="overflow:auto;">
+<p>GNI是以前的GNP</p>
+<p>GNI=GDP+来自国外要素<strong>净</strong>收入</p>
+</div>
+<p>GDP始于1929年，美国经济萧条，缺乏指标，1934美国发布相关数据</p>
+<p>GDP：一个国家或地区在给定时间内新增的最终产品和服务的总价值</p>
+<ol>
+<li>产品、服务，服务没有物质形态</li>
+<li>只算最终的</li>
+<li>国内是对地理限制，对国籍、身份是没有限制的</li>
+<li>固定时期</li>
+<li>市场价值加总</li>
+</ol>
+<p>从支出角度看GDP</p>
+<p>GDP由最终消费、投资需求、净出口<br/>最终消费在中国约占50%，又可分为居民消费和政府消费<br/>投资的支出是用来增加或替换生产资本的支出。不包括金融投资，如买股票。<br/>净出口=出口-进口</p>
+<p>从行业来看</p>
+<p>2016，第一产业占4.3%，第二产业38.2%，第三产业57.5%</p>
+<p>GDP作为经济福利衡量是有缺陷的，如果活动没有到市场上没被计算；有的消解人类破坏性问题；没考虑分配问题。</p>
+
+<h4>价格指数</h4>
+<p>通货膨胀经济学定义：整体物价水平的上升</p>
+<p>价格指数的构造</p>
+<ol>
+<li>选择 一组产品和服务、一个基期</li>
+<li>计算基期价格下购买这些产品和服务的成本 【基期成本】</li>
+<li>计算t期价格下购买这些产品和服务的成本 【t期成本】</li>
+<li>计算价格指数
+    $$第t期价格指数=\frac{t期成本}{基期成本}\times100$$</li>
+</ol>
+<div style="overflow:auto;">
+<table>
+<tr><td>CPI</td><td>包含一般消费者所购买的产品和服务</td><td>使用市场零售价格</td></tr>
+<tr><td>GDP平减指数</td><td>包含一国生产的所有产品和服务</td><td>使用市场零售价格</td></tr>
+<tr><td>PPI</td><td>包含一国生产的所有产品和服务</td><td>使用出厂价格</td></tr>
+</table></div>
+<div style="overflow:auto;">
+<table>
+<tr><th>差异</th><th>包括</th><th>不包括</th></tr>
+<tr><td>CPI</td><td>国内消费品和进口消费品</td><td>非国内消费的国内生产的</td></tr>
+<tr><td>GDP平减指数</td><td>中国生产的产品和服务</td><td>进口的消费品</td></tr>
+</table></div>
+<p>CPI GDP平减指数 使用市场零售价格</p>
+</details>
+<details>
+<summary>第二章 经济增长</summary>
+<h4>一些现象</h4>
+<ol>
+<li>工业革命前人均产出基本没有增长</li>
+<li>工业革命后人均产出持续增长</li>
+<li>增长分布不均匀</li>
+<li>若干发达国家生产趋同</li>
+</ol>
+<h4>生产要素的作用</h4>
+<p>索罗-斯旺模型：资本的边际产出递减，只靠给劳动力配更多资本不能带来经济增长</p>
+<h4>技术与效率</h4>
+<p>衡量效率：TFP(total factor productivity)一个经济或所有企业使用所有要素的效率，衡量一个经济的技术水平和效率水平<br/>可以简单理解为全要素生产率=科学技术+制度效率</p>
+<h4>总结</h4>
+<p>经济增长的来源<br/>生性资本、人力资本、自然资源、全要素生产率</p>
+<p>索罗-斯旺模型：资本的边际产出递减，只靠给劳动力配更多资本不能带来经济增长</p>
+<p>人力、自然也是有限的，最有可能推动经济增长的是全要素生产率</p>
+<p>现象的可能解释</p>
+<ol>
+    <li>工业革命前人均产出基本没有增长——技术进步小</li>
+    <li>工业革命后人均产出持续增长——技术进步与社会变革</li>
+    <li>增长分布不均匀——技术传播存在阻碍，需要相应人力，制度环境</li>
+    <li>若干发达国家生产趋同——使用先进技术方面的效率比较接近</li>
+</ol>
+</details>
+<details>
+<summary>第三章 凯恩斯主义</summary>
+<p>凯恩斯 Keynes，1883 — 1946，英国经济学家，1936《就业、利息和货币通论》。</p>
+<p>背景：1929起的大萧条<br/>
+当时主流经济学关注供给，对萧条没有政策建议<br/>
+1936《通论》</p>
+<ul>
+<li>总需求短期内对产出和就业有很大影响</li>
+<li>总需求不一定等于产能</li>
+<li>私人部门个体决定有时会导致缺乏效率的宏观经济结果（衰退）</li>
+<li>政府有必要用积极的财政政策和货币政策调节总需求</li>
+<li>提倡混合型经济：平时以私营为主，萧条时辅以政府干预</li>
+</ul>
+<p>结果</p>
+<ul>
+    <li>对宏观经济政策产生很大影响</li>
+    <li>1936-1973成为标准的宏观政策</li>
+    <li>1970年代出现滞涨后受质疑</li>
+    <li>2008年后再次重要</li>
+</ul>
+<div style="overflow:auto"><p>
+$$\tag{1}总需求=消费+投资+政府支出+净出口$$
+$$\tag{2}消费=自发消费+边际消费倾向\cdot(总产出-税收)$$
+$$\tag{3}总产出=总需求 \color{red}(均衡条件)$$
+</p></div>
+<div style="overflow:auto">
+<table>
+<tr><td>自发消费</td><td>不取决于现阶段收入的消费</td></tr>
+<tr><td>引致消费</td><td>消费中和现在税后收入相关的消费</td></tr>
+</table>
+</div>
+<p>边际消费倾向：税后收入越高，消费同比例上升，这个比例的系数称为边际消费倾向<br/>咳～，久等了，画图</p>
+<div id="myDiv" style="overflow:auto;"></div>
+<p>均衡条件下，满足(2)的同时满足(3)，均衡产出位于两线交点</p>
+<p>经济衰退有两种可能：</p>
+<ol>
+    <li>自发支出下降</li>
+    <li>边际消费倾向下降</li>
+</ol>
+<p>凯恩斯强调人的动物精神，动物本能影响经济需求，短时间影响经济的产出和就业。</p>
+<table>
+    <tr><td>变量</td><td>总需求、消费、总产出</td></tr>
+    <tr><td>常量(外生给定)</td><td>其他变量</td></tr>
+</table>
+<p>于是三个公式变成三个三元线性方程组，求解得</p>
+<div style="overflow:auto;">
+$$总产出=\underbrace{\frac{1}{1-边际消费倾向}}_{自发支出乘数}\cdot\underbrace{(自发消费+投资+政府支出+净出口-边际消费倾向\cdot税收)}_{自发支出}$$
+</div>
+<p>边际消费乘数的理解 每1元钱，A多向B支出1，B向C消费0.5，C向D消费0.5*0.5 。。。</p>
+<p>经济衰退时，政府可以对总需求进行调节，政府提高政府支出或减税都可以提高总支出水平</p>
+<p>运用条件<br/>1.价格固定<br/>2.产能没有限制<br/>经济衰退或萧条时适用</p>
+<h3>财政政策</h3>
+<p>财政开支乘数<br/>衡量财政政策的有效性<br/>衡量财政开支对总产出的影响</p>
+$$\frac{Y的变化}{财政支出的变化}$$
+<p>凯恩斯模型中:</p>
+$$政府采购的乘数=\frac{1}{1-边际消费倾向}$$
+$$减税的乘数=\frac{边际消费倾向}{1-边际消费倾向}$$
+<p>凯恩斯模型中，减税的拉动比直接采购少。直观上政府购买1元，则消费最初增加1元，1元给人民，人民最初消费边际消费倾向</p>
+<p>政府开支乘数，奥巴马的经济顾问小组主席 罗莫使用1.5 ～ 1.6<br/>得诺奖(1976)的弗里德曼 认为边际消费倾向及乘数都很小，因为一次性收入增长对消费影响不大</p>
+<p>哈佛教授巴罗 [新古典主义传统] 认为平时乘数接近0</p>
+<h5>弗里德曼的永久收入假设</h5>
+<p>决定消费水平时，考虑的是长期收入的分配问题。<br/>消费者希望把消费平均到未来几年。<br/>一次性的收入增加对消费的影响很小<br/>财政政策乘数接近0</p>
+<h5>挤出理论</h5>
+<p>政府为了财政扩张要发债券，企业和家庭也在金融市场借钱投资和消费，政府进入后利率提高，抑制消费和投资，政府投资增加挤出了私人和家庭的支出</p>
+<h5>家庭部门预期</h5>
+<p>政府减税但是不减少政府支出，消费者会预期未来增税，不会反应。</p>
+<p>另有经济学家强调减税对劳动供给的刺激，不强调对需求。</p>
+<h4>财政政策不灵活</h4>
+<p>构思到起作用可能有时滞。</p>
+</details>
+
+<details>
+<summary>第四章 货币理论(新古典经济学版)</summary>
+<p>货币定义：任何可以在交换中作为一般等价物的资产</p>
+
+<p>货币功能</p>
+<ol>
+<li>交换媒介</li>
+<li>记账单位</li>
+<li>储存加值</li>
+</ol>
+<div style="overflow:auto">
+<table>
+    <tr><th rowspan=5>中国<br/>货币<br/>统计<br/>口径</th></tr>
+    <tr><td>MB</td><td>基础货币</td><td>中国人民银行发行在外的货币</td><td>流通中 + 金库中</td></tr>
+    <tr><td>M0</td><td colspan=3>流通中的货币</td></tr>
+    <tr><td>M1</td><td colspan=3>M0 + 单位(企业)活期存款</td></tr>
+    <tr><td>M2</td><td colspan=3>M1 + 单位(企业)定期存款 + 居民储蓄账户存款</td></tr>
+</table>
+<p>不同口径的货币统计方法，每个口径交易中使用便利程度有差别</p>
+<h3>货币数量论</h3>
+<p>交换方程式</p>
+<div style="overflow:auto">
+    $$\underbrace{M}_{货币的存量} \times \underbrace{V}_{货币流通速度} = \underbrace{P}_{价格(物价水平)} \times \underbrace{Y}_{数量(实际GDP)}$$
+    $$P = MV/Y$$
+</div>
+<p>假设V和Y是相对稳定的，那么M的增加会引起P的同比例增加。弗里德曼[1976诺奖]通货膨胀是一个货币现象</p>
+<p>货币主义核心观点：价格和通货膨胀有紧密关系，想控制物价或通货膨胀就必须控制好货币发行量</p>
+<p>1980年前美国CPI与货币量(M1)基本一致。<br/>1980年后，货币和物价间差异较大，CPI以比较稳定的速度上行，美国货币供给起伏，2008年后快速上升但并没有引起物价快速上涨</p>
+<p>美国2008到2018年间，M1增长了169%，M2增长了90%，CPI只增长了19%</p>
+<p>实践中美联储发行的货币很多用来购买金融资产，没导致消费品价格同比例上升</p>
+<h4>关于国币流通速度的假设</h4>
+<p>1980年前货币流通速度比较稳定地增长，1980年后货币流通速度出现较大波动，因此货币流通速度为定值的假设不成立</p>
+<h3>货币银行与货币创造</h3>
+<p>中央银行并不能100%控制货币供给，商业银行、居民、企业也影响货币供给。<br/>货币口径中。。这里简化为流通中现金+存款</p>
+<p>假设一家银行，所有存款锁在金库，收取账户管理费来挣钱，然而现实不是这样</p>
+<div>
+    $$准备金率=\frac{\text{银行准备金}}{存款}$$
+</div>
+<p>最终准备金=央行发行量-家庭和企业持有<br/>最终存款=最终准备金/准备金率<br/>最终货币量=流通中的现金(即家庭与企业持有)+存款</p>
+<p>实践中准备金率是中国主要<strong>货币政策工具</strong>/另一个是利率</p>
+<p>大型金融机构法定准备金率约14%，中小金融机构约12%</p>
+<p>现代的货币银行制度建立在准备金率小于1的基础上，即部分准备金银行制度。</p>
+<p>中国2015年存款保险每人每银行50万人民币。</p>
+<h3>历史上的货币政策</h3>
+<ol>
+<li>
+<p>金本位</p>
+<p>使用含金硬币或黄金支持的纸币作为货币的货币体系</p>
+<p>一战前最常见的货币制度，同时也是汇率制度。中央银行的存在也不是必须的。<br/>金本位下，价格并不能必然保持高度的稳定
+$$P = \frac{MV}{Y}$$
+V与Y增加的速度都会影响经济中的价格。<br/>政府重新铸造货币并且降低含金量，会增加货币供给。货币供给超过GDP增长就会产生通货膨胀，经济增长速度高于黄金供给增长速度，则会出现通货紧缩。</p>
+<p>一战时贸易不重要，各国增发货币收取铸币税。放弃金本位<br/>一战后试图回到金本位，但是大萧条冲击了经济，央行金本位下难以增加货币供给。</p>
+</li>
+<li>
+<p>二战后黄金大部分在美国，金本位不现实，建立了布雷顿森林体系。<br/>本质：以美元为中心的货币体系<br/>美元盯住黄金，35美元1盎司<br/>主要西方国家货币盯住美元。美国有义务为其他央行、政府的美元换黄金。但是居民不能从央行把纸币换成黄金，因此不是金本位，是美元为中心的国际货币体系。<br/>美国保持了货币政策的自主。<br/>60年代，越南战争，美国货币供给上升，推高通货膨胀，别的国家不相信美元价值<br/>1971年尼克松宣布美元兑黄金终结，布雷顿森林体系终结。</p>
+</li>
+<li>
+<p>弗里德曼<br/>上一章提到
+$$P = \frac{MV}{Y}$$
+因此
+$$通货膨胀率 \approx 货币供给增长率 - 实际GDP增长率$$
+想控制通胀，就要控制货币增长率<p/>
+<p>弗里德曼的k%法则</p>
+<p>央行发行货币的增速应该等于实际GDP增速+g通货膨胀目标<br/>政府不能用货币政策管理其他目标，如GDP和就业。<br/>这一政策下不适合金本位。<br/>前美联储主席Paul Volker 1980用该法制成功降级了美国的高通胀。<br/>欧元区成立时，欧央行曾规定货币增长约4.5%，体现弗里德曼的思想。</p>
+<p>上文讨论过，1980年代后，货币增长和物价脱钩，简单的货币主义显得不合时宜了。</p>
+</li>
+</ol>
+<h5>现代货币政策</h5>
+<p>目前多数国家央行以名义利率作为货币政策工具调控经济。</p>
+<p>名义利率是借钱所需支付的利率，没有考虑通货膨胀的影响。</p>
+<p>借钱实际利率=名义利率-通胀</p>
+<p>短期通货膨胀率稳定，改变名义利率会改变通货膨胀率</p>
+<div style="overflow=scroll">
+$$实际利率\searrow \Rarr \left\lang \begin{aligned} 居民借钱消费\\ 企业借钱投资 \end{aligned}\right\rang \Rarr 总需求\nearrow \Rarr产出和物价\nearrow$$
+</div>
+<p>理论方面，斯坦福经济学家 约翰泰勒提出了一个规则 [泰勒规则]</p>
+<ul>
+<li>如果通货膨胀率<span>高于目标1%</span>，则把实际利息<span >提高1.5%</span>。</li>
+<li>如果GDP增长率比潜在增长率<span>高于1%</span>，则把实际利息<span >提高0.5%</span>。</li>
+<li>反之降息。</li>
+</ul>
+<p>泰勒规则给许多央行行为给出了合理描述<br/>
+<span>央行设定目标利率</span><br/></p>
+<ul>
+<li>如果利率高于目标，则央行将增加货币供给。</li>
+<li>如果利率<span>低于</span>目标，则央行将<span>减少</span>货币供给。</li>
+</ul>
+<p>实际实施中，央行通过买卖国债和其他金融资产增加货币供给。</p>
+<h4>名义利率如果到0了</h4>
+<p>能否继续用货币政策刺激经济，也就是名义利率可以是负的吗？<br/>总体上是否定的 //但是国债的利率可以是负的，比如日本</p>
+<h4>量化宽松</h4>
+<p>目的：解决名义利率到0时如何继续刺激经济。<br/>理解：央行的目标利率变成0后，仍然有许多其他利率高于0，仍可以通过g发行货币降低其他利率，促进经济发展。</p>
+<div style="overflow=scroll">
+<table>
+<tr><th></th><th>传统货币政策</th><th>量化宽松</th></tr>
+<tr><td>相同点</td><td>央行需要增加货币<br/>发行量增加货币</td><td>央行需要增加货币<br/>发行量增加货币</td></tr>
+<tr><td>不同点</td><td>降低央行的<br/>目标利率</td><td>降低央行目标利率<br/>之外的其他利率</td></tr>
+</table></div>
+<ul>
+<li>额外的货币和信贷降低目标利率以外的其他利率</li>
+<li>目的是银行实现贷款发放，实现信贷宽松</li>
+<li>同时资产价格上升，拥有金融资产的居民金融财富上升(利率下降，债券价格上升)增加消费</li>
+</ul>
+<p>操作上也是够卖国债等</p>
+<h4>前瞻指引</h4>
+<p>思路：对未来的利率提供指引<br/>企业和居民规划消费和投资时，不仅仅关系当前季度或一年利率，也关系未来利率。如果央行可以使大家相信未来利率也会维持在较低水平，那么就可以刺激消费和投资。<br/>实施的关键在于沟通，比如美联储<br/>2008-12-16 for some time<br/>2009-03-06 for an extended period<br/>2011-08-09 至少2013年底</p>
+<p>实践中难以考察两种非常规政策对GDP的影响<br/>但可以考察中间渠道 利率和价格(对美国确实有效果)</p>
+</details>
+<details>
+<summary>第五章 总供给总需求模型</summary>
+<p>凯恩斯主义简单模型没有通胀。引入通胀，研究财政政策、货币政策对通胀的影响。研究经济的短期和长期均衡</p>
+<p>主要变量：产出和通货膨胀（或价格）</p>
+<p>短期总供给曲线(AS)，向上倾斜。</p>
+<p>短期总需求曲线(AD)，向下倾斜。</p>
+<p>长期总供给曲线(LRAS)，垂直于横轴。</p>
+
+<p>短期的总供给曲线<br/>如果企业看到 产品价格上升速度 &lt; 预期的通货膨胀率<br/>企业认为需求变强，增加产量（&gt;正常产量）。<br/>其余情况同理</p>
+<p>总需求曲线下斜，因为如果实际通胀 &gt; 货币当局目标<br/>居民财富缩水加快，需求下降。<br/>其余情况同理</p>
+<p>长期总供给垂直横轴<br/>货币中性，长期货币不能主导经济的产出，取决于技术和资源</p>
+<h3>经济均衡</h3>
+<div id='asad' style="overflow:auto;"></div>
+<ul>
+<li>短期均衡点A为AS与AD的交点</li>
+<li>本例子中短期均衡产出 &gt;潜在产出，因此这不是可以持续的情况</li>
+</ul>
+<p>长期均衡点需要是AD与AS的交点<br/>还要求产出=潜在产出，也就是三条线交与同一点</p>
+<p>如果出现外来因素对经济冲击，会同时影响产出和通胀，比如净出口下降，总出口下降，AD左移，导致通胀和产出下降。</p>
+<h3>政府的选择</h3>
+<p>模型有3个因素，相应的有三种冲击</p>
+<ul>
+<li>短期需求冲击：出口、自发消费需求</li>
+<li>短期供给冲击：原油价格、或天气等导致的通货膨胀，引起AS向左/向上<br/>企业的通胀预期
+    <div style="overflow:auto;">
+        $$企业预期通货膨胀\nearrow \Rarr 生产意愿\searrow \Rarr 短期总供给曲线向左/向上$$
+    </div>
+</li>
+<li>长期供给的冲击：长期技术或制度变化代来长期供给的。。</li>
+</ul>
+<p>政府有两种选择</p>
+<ol>
+    <li>货币政策或财政政策干预</li>
+    <li>政府不干预，让企业、家庭自己调整</li>
+</ol>
+<p>例子：净出口下降，短期均衡由A变成B</p>
+<div id='shock' style="overflow:auto;"></div>
+<h4>政府介入</h4>
+<p>使用财政政策：增加政府开支，将总需求移回原位<br/>货币政策：降低利率刺激经济，增加总需求</p>
+<p>政府的目的：把经济从B移回到A，产出等于潜在产出，也没有失业问题</p>
+<h4>政府不介入，企业调整</h4>
+<p>B点π2 &lt; π1<br/>相当长时间，产出较低，通胀较低，企业意识到原有通货膨胀预期不合理，企业下调通货膨胀预期，使得AD曲线向下向右移动</p>
+<div id='shock2' style="overflow:auto;"></div>
+<div style="overflow:auto;">
+<table>
+<tr><th></th><th>政府干预</th><th>政府不干预</th></tr>
+<tr><th>优点</th><td>产出停留在低水平时<br/>间短，失业代价小。</td><td>不需要政府动用资源调节经济<br/>长期通货膨胀下降</td></tr>
+<tr><th>缺点</th><td>财政政策 赤字等<br/>货币政策 经济过热</td><td>较长时间低产出<br/>失业代价高</td></tr>
+</table></div>
+<h3>模型中短期和长期的理解</h3>
+<p>短期企业无法迅速调整价格使产出达到均衡 1～2年</p>
+<p>长期企业有足够时间调整价格，产出回到潜在产出 3～5年</p>
+</details>
+<details>
+<summary>第六章 国际经济</summary>
+<h3>汇率</h3>
+<p>国际收支账户<br/>统计一个国家h与其他国家地区的交易<br/>包含</p>
+<ol>
+<li>经常项目：统计贸易交易的数据，包括产品、资本和劳动力的进出口</li>
+<li>资本项目：资产交易金额，中国人去外国购买资产，外国从中国购买资产，包括股票债券、(政府、私人)债务房地产</li>
+</ol>
+<p>汇率：经济交往中，对不同货币兑换使用时使用的比价。</p>
+<p>双边名义汇率：一个国家和另一个国家之间的货币兑换比例。在本文中把它定义为用本国货币计价的外币的价格，比如1美元\(\approx\)7人民币<br/>7就是双边名义汇率</p>
+<p>双边实际汇率：在两国贸易中，影响短期贸易优势的矫正过价格差别的汇率。//体现贸易优势</p>
+<div style="overflow:auto;padding:0.2em">
+    $$q = e\frac{P_{\text{外国}}}{P_{\text{本国}}}$$
+</div>
+<p>P通常可以使用PPI，或CPI</p>
+<div style="overflow:auto;padding:0.2em">
+    $$q = 7\frac{P_{\text{美国}}}{P_{\text{中国}}} = \frac{7}{1}\frac{P_{\text{美国}}}{P_{\text{中国}}} = \frac{7人民币}{1美元}\frac{P_{\text{美国}}}{P_{\text{中国}}}$$
+    $$q = \frac{7人民币/P_{\text{中国}}}{1美元/{\text{中国}}}$$
+</div>
+<p>分子是人民币在中国的购买力，分母时1美元在美国的购买力。这个分数对比了一美元在两个国家购买力的比例。</p>
+<div style="overflow:auto;padding:0.2em">
+    $$q \nearrow \Rarr \begin{aligned} 在中国可以买\\ 到更多的东西 \end{aligned}\Rarr \begin{aligned} 在中国的东\\ 西变得便宜 \end{aligned}  \Rarr \begin{aligned} 特民币的实\\际汇率贬值 \end{aligned}$$
+</div>
+<p>实际汇率贬值利于出口</p>
+<p>段时间价格变动较慢，一国名义汇率贬值会导致实际汇率贬值。</p>
+<p>\(e_{\text{ppp}}\)购买力平价汇率：让同样数量的一种货币在不同国家有相同的购买力的汇率</p>
+<div style="overflow:auto;padding:0.2em">
+    $$\frac{1美元}{P_{\text{美国}}}=\frac{1美元 \times e_{\text{ppp}}}{P_{\text{中国}}}$$
+    $$e_{\text{ppp}}=\frac{P_{\text{中国}}}{P_{\text{美国}}}$$
+</div>
+<p>理想主义的汇率，实践中两个用途<br/>市场(名义)汇率长期估值<br/>对比不同国家的实际产出水平</p>
+<p>2017美元对购买力平价汇率3.5，按这个换算则中国当年GDP排名最高。</p>
+<h3>有效汇率</h3>
+<p>名义有效汇率<br/>实质上是多个双边汇率的平均<br/>根据不同国家在国际经济中的重要程度，我们可以给不同国家的汇率不同的权重，计算出有效汇率的指数</p>
+<p>例子：常用的美元指数是一种名义有效汇率</p>
+<div style="overflow:auto;padding:0.2em">
+$$美元指数=基数\cdot\text{欧元汇率}^{0.578}\cdot\text{日元汇率}^{0.136}\cdot\text{英镑汇率}^{0.119}\cdot\text{加元汇率}^{0.091}\cdot\text{瑞典克朗汇率}^{0.042}\cdot\text{瑞士法郎汇率}^{0.036}$$
+</div>
+<p>美元指数1973年提出，初值100.因为1971布雷顿森林体系解散后，各国汇率不再盯住美元，用美元指数反映美元对其他国家升值和贬值</p>
+<h3>汇率制度与国际宏观</h3>
+<div style="overflow:auto">
+<table>
+<tr><td>固定汇率制度</td><td>港元(盯住美元)、欧元(各国同一个货币)等</td></tr>
+<tr><td>浮动汇率制</td><td>美元、加元、英镑等</td></tr>
+<tr><td>中间类型的汇率制</td><td>人民币、新加坡元等</td></tr>
+</table>
+</div>
+<p>中国实行的是管理浮动的汇率制度。<br/>对美元汇率每日交易区间达到 +/- 3%</p>
+<div style="overflow:auto;padding:0.2em">
+    $$中间价=\underbrace{收盘汇率}_{市场的供需}+\underbrace{一篮子货币汇率变化}_{\begin{aligned} 整体上各个国家汇\\ 率对美元的走势 \end{aligned}}+\underbrace{逆周期调节因子}_{\begin{aligned}过滤市场情绪\\ 的过度波动\end{aligned}}$$
+</div>
+<p>三元悖论</p>
+<div style="overflow:auto">
+    <table>
+        <tr><td>稳定或固<br/>定的汇率</td><td>有利于国家之间的<br/>贸易和资本往来</td></tr>
+        <tr><td>国际资本<br/>自由流动</td><td>开放资本项目</td></tr>
+        <tr><td>货币政策<br/>自主性</td><td>能用货币政策管理<br/>GDP和通货膨胀</td></tr>
+    </table>
+</div>
+<p>国际经济学的三元悖论：一个国家最多只能选择3个目标中的两个，不能3者兼得。</p>
+<p>三种典型选择</p>
+<p>固定汇率+允许资本自由流动，例如香港</p>
+<div style="overflow:auto;padding:0.2em">
+    $$i_{\text{香港}}=i_{\text{美国}}+\underbrace{\frac{E(e_{t+1})-e_t}{e_t}}_{=0}$$
+    $$i_{\text{香港}}=i_{\text{美国}}$$
+</div>
+<p>香港失去货币政策自主</p>
+<p>资本自由流动+货币政策自主，例如加拿大</p>
+<div style="overflow:auto;padding:0.2em">
+    $$i_{\text{加拿大}}=i_{\text{美国}}+\frac{E(e_{t+1})-e_t}{e_t}$$
+    $$i_{\text{加拿大}}-i_{\text{美国}}=\frac{E(e_{t+1})-e_t}{e_t}$$
+    $$i_{\text{加拿大}} \gt i_{\text{美国}} \Rarr 加元 \nearrow$$
+    $$i_{\text{加拿大}} \lt i_{\text{美国}} \Rarr 加元 \searrow$$
+</div>
+<p>加拿大必须接受加元的汇率无法固定</p>
+</details>
+</div>
+</body>
+</html>

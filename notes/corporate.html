@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="charset=utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<title>公司金融</title>
+<style type="text/css">
+    <!--@import url(../style.css);-->
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"
+        onload="renderMathInElement(document.body);"></script>
+</head>
+<body>
+
+<div class="main-content" style="color:black">
+<h2>公司金融学</h2>
+<details>
+<summary>资本结构问题 MM定理</summary>
+<p>股权、债券、其它负债的比例</p>
+<p>全权益公司（只通过股权融资）的权益叫做无杠杆权益</p>
+<p>杠杆公司（同时用股权和债务）</p>
+<p><strong>MM 定理 [Modigliani (1985诺奖) | Miller (1990年诺奖)]</strong></p>
+<p>简述：完美资本市场下，企业价值与其资本结构无关。</p>
+<p>[无税条件]</p>
+<p>假设</p>
+<ol>
+    <li>没有税收</li>
+    <li>没有交易费用</li>
+    <li>个人和公司以相同利率借款</li>
+</ol>
+<p>定理</p>
+<ol>
+<li><details>
+<summary>MM1 完美市场条件下，公司的总价值等于其全部现金流的市场价值，同时，公司价值不受资本结构的影响</summary>
+<p>推导</p>
+<p>自制杠杆 : 投资者如果不满意公司的资本结构，可自行投资无风险利率，来降低杠杆；或者以无风险利率借款，自行提高杠杆。所以企业的杠杆对投资者没有影响。</p>
+</details></li>
+<li><details>
+<summary>MM2 杠杆权益的资本成本(R_e)随着公司负债权益比(D/E)的上升而上升</summary>
+<p>推导</p>
+<table>
+<tr><td>A</td><td>Asset</td></tr>
+<tr><td>D</td><td>debt</td></tr>
+<tr><td>E</td><td>equity</td></tr>
+<tr><td>U</td><td>全权益企业的权益市场价值</td></tr>
+</table>
+<p>$$ E+D = U = A$$
+$$\frac{E}{E+D} \times R_E + \frac{D}{E+D} \times R_D =R_U$$
+$$R_E = R_U + \frac{D}{E}\times(R_U-R_D)$$</p>
+<p>公司经营良好时$$R_U>R_D \implies R_E>R_u$$</p>
+</details></li>
+</ol>
+<p>[有税条件]</p>
+<p>假设</p>
+<ol>
+    <li>存在公司税，税率是t_c，从扣除利息的税前利润中扣</li>
+    <li>没有交易费用</li>
+    <li>个人和公司以相同利率借款</li>
+</ol>
+<p>定理</p>
+<ol>
+<li><p>MM1 (没考虑破产成本)有税条件下，公司的总价值与债务正相关
+    <div style="overflow:auto">
+    $$V_L = EBIT\times(1-t_c)/R_U + t_c \times R_D \times D / R_D = V_U + t_c \times D$$
+    </div></p></li>
+
+<li><p>MM2 杠杆权益的资本成本(R_e)随着公司负债权益比(D/E)的上升而上升，但是由于税盾，影响被减弱了
+    <div style="overflow:auto">
+    $$R_E = R_U + D/E\times(R_U-R_D)\times(1-t_c)$$
+    $$R_{WACC} = E/(E+D) \times R_E + D /(D+E) \times R_D\times(1-t_c)$$
+    </div></p>
+</li>
+</ol>
+</details>
+<details>
+<summary>融资决策 考虑现实</summary>
+<h3>财务困境</h3>
+<ol>几个事实
+<li>没有任何正常经营企业资产负债率是100%</li>
+<li>资产负债率有行业差异，一般工业负债较多</li>
+</ol>
+<p>相比于股权，使用负债会给公司更大压力，于破产相关的成本降低了税盾的价值</p>
+<p>财务困境的直接成本，律师、会计师等<br/>财务困境间接成本，难以度量却比直接成本可能更大，顾客流失、供应商流失、雇员流失、急于出售资产的损失</p>
+<p>识别时注意是公司总价值，不是但从债务人或股东，更不是债权人和股东间的转移<br/>另外识别的是超过经济困境成本的由财务困境引起的增量损失</p>
+<h3>代理问题//股东代理整个公司</h3>
+<p>代理成本<br/>可能采取有利股东，不利于债权人的行动，降低公司整体价值</p>
+<p>代理收益</p>
+<ul>
+<li>股权集中</li>
+<li>减少无谓投资//闲钱更少</li>
+<li>增加承诺可信度</li>
+</ul>
+<h3>逆向选择//投资者不知道股票值不值</h3>
+</details>
+
+<details>
+<summary>投融资决策综合</summary>
+<p>贴现现金流模型</p>
+<div style="overflow:auto">
+$$P=\sum_{t=0}^{N}PV(C_n)=\sum_{n=0}^{N}\frac{C_n}{(1+r)^n}$$
+$$CF=EBIT\times(1-t)+Dep-CapEx+\Delta NWC$$
+$$r_{WACC}=\frac{D}{D+E}r_D(1-t)+\frac{E}{D+E}r_E$$
+$$r_E=r_f+\beta_E(E(r_M)-r_f)$$
+$$r_E=\frac{Div_1}{P_0}+g$$
+</div>
+<p>** D=负债-现金，因为现金是无风险资产</p>
+<h3>探究融资决策如何影响投资决策</h3>
+<ol>
+<li>加权平均资本成本法 WACC</li>
+<li>调整现值法 APV(Adjusted Present Value)</li>
+<li>权益现金流法 FTE(Flow to Equity)</li>
+</ol>
+<p>假设</p>
+<ol>
+<li>项目风险和公司风险类似</li>
+<li>公司的负债权益比固定</li>
+<li>公司税是唯一的市场摩擦(不考虑股票的发行成本，个人税，财务困境成本，委托代理成本)</li>
+</ol>
+<h3>WACC法</h3>
+<p>对税盾效应的反应是通过计算税后资本的成本的方法进行的，形式如下</p>
+<div style="overflow:auto;padding:0.2em">
+$$r_{WACC}=\frac{D}{D+E}r_D(1-t)+\frac{E}{D+E}r_E$$
+</div>
+<p>杠杆价值</p>
+<div style="overflow:auto;padding:0.2em">
+    $$\begin{aligned}
+    V_{L}&=\sum_{t=0}^{N}\frac{FCF_n}{(1+r_{wacc})^n}\\
+    &=\frac{FCF_1}{1+r_{wacc}}+\frac{FCF_2}{(1+r_{wacc})^2}+...\end{aligned}$$
+</div>
+<p>算出自由净现金流(FCF)<br/>估计WACC，方法如上<p>再计算杠杆项目的价值</p>
+<h3>APV法</h3>
+<div style="overflow:auto;padding:0.2em">
+$$V_L=APV=V_U+PV(tax shield)$$
+</div>
+<ol>
+    <li>计算无杠杆价值\(V_U\)</li>
+    <li>计算税盾现值</li>
+    <li>公司税是唯一的市场摩擦(不考虑股票的发行成本，个人税，财务困境成本，委托代理成本)</li>
+</ol>
+<p>无杠杆的折现率等于税前加权平均资本成本</p>
+<div style="overflow:auto;padding:0.2em">
+    $$r_U=\frac{D}{D+E}r_D+\frac{E}{D+E}r_E=\text{Pretax WACC}$$
+</div>
+<p>投资者持有整个公司时要求的回报率。只与公司的整体风险有关，与融资决策无关。</p>
+<p>计算税盾的现值：</p>
+<div style="overflow:auto;padding:0.2em">
+    $$\text{第t期的税盾}=\underbrace{t}_{\text{边际税率}}\times\underbrace{r_D}_{\text{负债利率}}\times\underbrace{D_{t-1}}_{借债能力}$$
+</div>
+<p>为了使负债比例不变</p>
+<div style="overflow:auto;padding:0.2em">
+   $$D_t=d\times V_L^t$$
+</div>
+<p>d是企业的目标价值比，\(V_L^t\)是不同时点上的杠杆项目的价值，由项目未来的所有自由现金流折现来计算</p>
+<p>最后，如果企业保持目标杠杆比率，那么它未来的利息税盾风险等同于项目的现金流，可以使用项目的无杠杆资本成本\(r_U\)作为贴现率</p>
+<h3>FTE</h3>
+<p>流向权益的现金流FCFE，对FCF进行利息支付，债务发行，债务偿付之后的现金流。</p>
+<div style="overflow:auto;padding:0.2em">
+    $$FCFE=FCF-\underbrace{(1-t)\times(Interest Payments)}_{流向债权人的现金流}+\underbrace{(Net Borrowing)}_{从债权人流入的现金流}$$
+    $$NetBorrowing=D_t - D_{t-1}$$
+</div>
+<p>FCFE衡量了公司有多少额外的现金来支付股利或者回购股票。</p>
+<p>现金流</p>
+</details>
+
+
+<p>权衡理论：公司在税盾的收益和财务困境的成本间权衡</p>
+<p></p>
+<p>优序融资(考虑代理问题、逆向选择)：融资优先级一般是 自有资金 > 债务融资 > 股权融资</p>
+<p>按权衡理论应该存在最优资本结构，优序融资没有意识到</p>
+</div>
+</body>
+</html>

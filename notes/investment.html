@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="charset=utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<title>投资学</title>
+<style type="text/css">
+    <!--@import url(../style.css);-->
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"
+        onload="renderMathInElement(document.body);"></script>
+</head>
+<body>
+
+    <div class="main-content" style="color:black">
+<h2>投资学</h2>
+<details>
+<summary>投资公司</summary>
+<p>一种金融中介，汇集资金，投资证券</p>
+<p>按有没有管理分<br/>单位投资信托(组合不会变化)，大多数投资固收<br/>投资管理公司，包括:开放型基金(共同基金),封闭型基金</p>
+</details>
+<details>
+<summary>资产定价</summary>
+<p>CAL 资本配置线</p><p>一条射线，Rf指向P（P是主动策略的投资）<br/>无风险资产和风险资产间不同的比例，标准差作为横坐标，期望收益作为纵坐标。</p>
+<p>CML 资本市场线</p><p>相信市场，被动投资</p>
+<p>CAPM 资本资产定价模型</p>
+<p>提出者: 夏普(William Sharpe)等60s提出 1990诺奖<br/>建立基础：马科维茨均值方差 马科维茨1990诺奖<br/>包括两部分 CML资本市场线 SML证券市场线<br/>(1)假设:<br/>1.一期内，投资者使用回报率的期望和标准差作为证券组合的好坏标准，所有投资者都是价格接受者<br/>2.所有投资者是非满足的<br/>3.所以投资者是风险厌恶的</br>4.每个证券是无限可分的<br/>5.无税收，无交易成本<br/>6.投资者可以以无风险利率无限借和贷<br/>7.所有投资者投资周期相同<br/>8.对所有投资者，无风险利率相同<br/>9.对所有投资者，信息可以无限自由获得<br/>10.所有投资者有相同预期<br/><br/>(2)分离定理<br/>每个投资者切点的投资组合相同，不受风险偏好影响<br/><br/>(3)市场证券组合<br/>所有风险证券组成的证券组合。投资在每种证券的比例等于它的相对市场价值。有多个证券市场时应该把它们放在一个篮子里。<br/>市场均衡(包括货币市场和资本市场的均衡，货币市场均衡意味着借贷相等，从而所有个体初始财富的和等于所有风险证券的市场总价值；资本市场均衡意味着每种证券的供给等于需求)时切点的证券组合是市场组合。<br/>市场均衡时市场证券组合的权重等于切点证券组合的权重，均衡的时候切线就成了CML。<br/><br/>均衡时每一个证券的风险与收益的关系:对市场说
+$$E(r_m)-r_f=\overset{-}{A} \times \sigma_m^2$$
+\(\overset{-}{A}\)是投资者整体的风险厌恶，这个公式可以用来估计\(\overset{-}{A}\)//注：风险资产投资比例&nbsp;\(y=\frac{E(rp-rf)}{A\times\sigma^2}\)，对所有投资者，均衡时y=1；也可以从相切于\((\sigma_m,E(r_m-r_f))\)考虑<br/>某公司，GE公司，对市场组合的贡献有多大
+<div style="overflow:auto">
+$$w_{GE} \times sum(Cov(r_{GE},w_k \times r_k))=w_{GE} \times Cov(r_{GE},r_m)$$
+</div>
+GE对风险溢价的贡献/GE对方差的贡献
+$$ = E(r_{GE}-r_f)/Cov(r_{GE},r_m)$$
+均衡时
+<div style="overflow:auto">
+$$\frac{E(r_{GE}-r_f)}{Cov(r_{GE},r_m)}=\frac{E(r_m-r_f)}{\sigma_m^2}$$
+</div>
+移项得
+$$E(r_{GE})=r_f+\beta\times(r_m-r_f)$$
+上式还可以通过构建i和市场的投资组合，随\(w_i = 0\)的变化形成曲线，\(w_i = 0\)时，和CML相切<br/>SML 证券市场线，\(\beta\)为横轴，r为纵轴的线<br/>\(\alpha\) :如果认为某种模型正确，那么我们应该追求\(\alpha > 0\)。注意非超额收益，超额收益指的是回报率减去无风险。\(\alpha\) 是回报率减定价模型预测的收益。</p>
+<p>CAPM扩展<br/>1.如果没有无风险资产，那资本市场线退化成曲线了<br/>2.如果不可以无风险借款，那CML在切点右侧会出现一段曲线</p>
+<p>APT 套利定价理论</p>
+<P>提出者: 罗斯(Stephen Ross) 1976年 没得过诺贝尔<br/>基础:因子模型<br/>单因子模型相较马科维茨的均值方差模型可以简化运算量。<br/>均值-方差需要估计n个期望，n个方差，n*(n-2)/2个协方差<br/>单因子模型要估计n个a,n个b,n个残差的方差，1个因子方差，1个因子期望<br/>由无套利原则，因子模型下，相同因子敏感性的资产应提供相同的期望收益率。<br/>APT假设<br/>1.市场是有效的，充分竞争，没有摩擦<br/>2.投资者非满足<br/>3.投资者有相同的预期<br/>4.e与所有因子不相关且E(e)=0<br/>5.市场上证券数远大于因子数目k<br/>(2)构建套利组合：零投资、无风险(对任何因子的敏感度为0)、正收益<br/>(3)无套利均衡下的资产收益率<br/>注：APT可以是多期模型<p>
+<p>APT与CAPM区别</p>
+<p>1.纯因子组合不是市场组合时，APT和CAPM不一定一致<br/>2.CAPM中市场组合处于不可或缺的地位，APT不要求市场组合，可以是任何风险分散良好的组合<br/>3.CAPM是一期模型，APT可以是多期<br/>4.APT以无套利为核心，CAPM以均值-方差模型<br/>5.CAPM中证券风险只与市场组合的beta相关，它只给出了大小，而没表明风险来自何处。APT承认多种因素影响证券价格，扩大了资产定价范围，为识别证券风险来源提供分析工具</p>
+<p>APT的意义：对系统风险进行细分，使投资者能够测量资产对各种因素的敏感系数，因而可以使资产组合更准确<br/>APT的局限：决定资产价格可能存在多种因素，模型本身不能确定因素是什么和因素的数量，实践上有经验性和随意性。</p>
+</details>
+<details>
+<summary>有效市场</summary>
+<p>弱有效市场<br/>价格已经反映了所有历史的价格和交易量的信息</p>
+<p>半强有效<br/>价格已经反映了所有公开信息</p>
+<p>强有效<br/>价格已经准确反映了所有信息</p>
+<p>检验弱有效<br/>技术分析如没用<br/>证券价格在事件上独立</p>
+<p>检验半强有效<br/>公开信息构建投资策略，识别异象<br/>信息发布的事件研究</p>
+<p>市场有效对企业融资的意义<br/>优化资源配置</p>
+</details>
+<details>
+<summary>行为金融与投资</summary>
+<p>2013 Shiller诺奖(与支持理性的Famma同年)</p>
+<p>重要模块<br/>有限套利，套利有限制，误差可持续存在<br/>投资者非理性：信息认识偏差、决策偏差</p>
+<p>套利限制<br/>基本面风险<br/>——市场维持非理性时间超过偿付能力<br/>——股票需要想当长的时间回到真实价格<br/>执行成本<br/>——交易成本和卖空期限对套利产生限制<br/>模型风险<br/>——使用了错误的模型</p>
+<p>信息处理中的错误....</p>
+</details>
+<p>Sharpe Ratio 夏普比率
+$$Sharpe Ratio = \frac{E(R_P - R_f)}{\sigma_P}$$</p>
+<p>Sortino Ratio 索提诺比率
+$$Sharpe Ratio = \frac{E(R_P - R_f)}{\sigma_d}$$
+$$\sigma_d = \text{SD of the downside}$$
+<br/>与夏普比率类似，所不同的是它区分了波动的好坏</p>
+<p></p>
+</div>
+</body>
+</html>
