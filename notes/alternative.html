@@ -197,11 +197,24 @@ Relative value fund managers take long and short positions that are relatively e
     $$\text{Conversion Value} = \text{Current Stock Price} \times \text{Conversion Ratio}$$
     $$\text{Conversion Premium} = \frac{(\text{Convertible Bond Price} - \text{Conversion Value})}{\text{Conversion Value}}$$
 </div>
+<p>Example:<br/>Consider a firm with a borrowing cost of 8% on unsecured, subordinated straight debt and a current stock price of $40. The firm may be able to issue three-year convertible bonds at an annual coupon rate of 4% by offering a conversion ratio such as 20.<br/>Given that a strike price of $50, and other parameters, such as volatility and dividends—is valued at $5.14 per share according to the Black-Scholes option pricing model.<br/>what are the value of the convertible bond, the conversion value, and the conversion premium?</p>
+<p>Answer:<br/>Value of straight debt:40/1.08+...+1040/1.08^3=896.92<br/>Value of the implicit equity call option=5.14*20=102.8<br/>Convertible bond price=896.92+102.8=999.72</p>
 <ul>
-<li>volatility arbitrage</li>
-<li>fixed-income arbitrage</li>
-<li>relative value multi-strategy funds</li>
+<li>Bonds with very high conversion premiums are often called <b>busted convertibles</b>, as the embedded stock options are far out-of-the-money. (<b>bond-like convertible</b>)</li>
+<li>Bonds with very low conversion premiums have stock options that are deep in- the-money, where the convertible bond price and the conversion value are very close. (<b>equity-like convertible</b>)</li>
+<li>Convertible bonds with moderately sized conversion ratios have stock options closer to being at-the- money and are called hybrid convertibles.</li>
 </ul>
+<h3>Delta, Gamma, and Theta</h3>
+<div style="overflow:auto;">
+<table>
+<tr><td></td><th>Change of</th><th>Relative to</th></tr>
+<tr><th>Delta \(\Delta\)</th><td>Value of Option</td><td>value of underlying assets</td></tr>
+<tr><th>Gamma \(\Gamma\)</th><td>Delta</td><td>value of underlying assets</td></tr>
+<tr><th>Theta \(\Theta\)<br/>(time decay)</th><td>Option price</td><td>Time</td></tr>
+</table>
+</div>
+<ul><li>You can tell if an option is OTM by determining what the current price of the underlying is in relation to the strike price of that option. For a call option, if the underlying price is below the strike price, that option is OTM.<br/>These options will have a delta of less than 0.5</li></ul>
+
 </details>
 
 <details>
