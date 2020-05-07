@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
     <style type="text/css">
         <!--@import url(style.css);-->
-        </style>
+    </style>
+    <script src="./static/vendor/jquery/jquery.min.js"></script>
 </head>
 <body>
 <script type="text/javascript">
@@ -17,6 +18,14 @@
 <div class="main-content">
     <a href="javascript:myurl('diary.html')">日记</a>
 </div>
-
+<div class="main-content">
+    <input type="text" id="the_title" value=".html"/>
+    <input type="button" id="get_it" value="前往"/>
+</div>
+<script>
+$("#get_it").click(function () {
+    window.location.href='/usr/protected/'+document.getElementById("the_title").value+'?key='+JSON.parse(localStorage.getItem("key"))+'&usr='+JSON.parse(localStorage.getItem("usr"));
+});
+</script>
 </body>
 </html>
