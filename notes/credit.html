@@ -3,15 +3,33 @@
 <head>
     <meta http-equiv="Content-Type" content="charset=utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
-<title>新结构经济学</title>
+<title>信用评分</title>
 <style type="text/css">
     <!--@import url(../style.css);-->
 </style>
-
 </head>
 <body>
 <div class="main-content" style="color:black">
-
+    
+<h3>判别分析 LDA MDA DA</h3>
+<p>LDA(Linear Discriminant Analysis)也称为MDA(Multiple Discriminant Analysis)，或DA</p>
+<p>用处：在已知分类的样本，遇到新样本时，选定一个判别标准，以判将新样本放置于哪个类别中</p>
+<p>方差分析：自变量是分类变量，因变量是连续变量。<br/>判别分析：自变量通常是连续变量，因变量是分类变量<p>
+<p>基本分析步骤：</p>
+<ol>
+<li>估计系数，或因素权重，建立判别方程、函数</li>
+<li>利用判别函数作为决策标准计算得分，根据临界分数划分类别</li>
+<p>应用条件：</p>
+<ol>
+<li>分组类型在两组以上</li>
+<li>每类至少有一个样本</li>
+<li>解释变量是可测量的</li>
+</ol>
+<p>假设条件</p>
+<li>无多重共线性</li>
+<li>各组中变量的协方差矩阵相同</li>
+<li>各变量间具有多元正态分布</li>
+<p>按判别准则分，有Fisher判别、Bayes判别、距离判别</p>
 </div>
 </body>
 </html>
