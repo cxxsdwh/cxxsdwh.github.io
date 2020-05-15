@@ -15,6 +15,25 @@
 <body>
 <div class="main-content" style="color:black">
 <h3>线性回归</h3>
+<p>要求：total number of cases \(\geqslant\) number of treatments(解释变量数目，包括截距项)</p>
+<h3>Assumptions 基本假设</h3>
+<ol>
+<li><b>Weak exogeneity</b> 弱外生性 This essentially means that the predictor variables x can be treated as fixed values, rather than random variables. This means, for example, that the predictor variables are assumed to be error-free</li>
+<li><b>Linearity</b> 线性性 This means that the mean of the response variable is a linear combination of the parameters (regression coefficients) and the predictor variables</li>
+<li><b>Constant variance</b> (a.k.a. homoscedasticity) 同方差性，This means that different values of the response variable have the same variance in their errors, regardless of the values of the predictor variables.</li>
+<li><b>Independence</b> of errors 误差项独立（这里只要不相关） This assumes that the errors of the response variables are uncorrelated with each other. (Actual statistical independence is a stronger condition than mere lack of correlation and is often not needed, although it can be exploited if it is known to hold.)</li>
+<li><b>Lack of perfect multicollinearity</b> in the predictors 无多重共线性 For standard least squares estimation methods, the design matrix X must have full column rank p; otherwise, we have a condition known as perfect multicollinearity in the predictor variables.</li>
+</ol>
+<h3>F统计量</h3>
+<div style="overflow:auto;">
+    $$\begin{aligned}
+    F&=\frac{\text{variane between treatments}}{\text{variance within treatments}}\\
+    &=\frac{MS_{\text{Treatments}}}{MS_{\text{Error}}}\\
+    &=\frac{SS_{\text{Treatments}}/(I-1)}{SS_{\text{Error}}/(n_T-I)}
+    \end{aligned}$$
+</div>
+<p>\(MS\) is mean square, \(I =\) number of treatments(解释变量数目，包括截距项), and \(n_T = \) total number of cases</p>
+<h3>方差分析</h3>
 <div style="overflow:auto;">
     $$\begin{aligned}
     &\sum_{i=1}^{n}(y_i-f(x_i))^2\\
