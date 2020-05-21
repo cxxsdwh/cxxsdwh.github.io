@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="charset=utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<title>数学</title>
+<style type="text/css">
+    <!--@import url(../style.css);-->
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"
+        onload="renderMathInElement(document.body);"></script>
+</head>
+<body>
+<div class="main-content" style="color:black">
+<h2>数学</h2>
+<h3>费马引理(Fermat's theorem (stationary points))</h3>
+<p>Let \(f:(a,b)\to R\) be a function and suppose that \(x_0\in (a,b)\) is a point where \(f\) has a local <b>extremum</b>. If \(f\) is differentiable at \(x_0\)</p>
+<p>Then \(f'(x_0)=0\)</p>
+<h4>Proof1: Non-vanishing derivatives implies not extremum</h4>
+<div style="overflow:auto;">
+<p>assume without loss of generality that \(K>0\)</p>
+$$f'(x_0)=K\text{ means that}$$
+$$\lim\limits_{\varepsilon\rarr 0}\frac{f(x_0+\varepsilon)-f(x_0)}{\varepsilon}=K$$
+<p>In particular, for sufficiently small \(\varepsilon\) (less than some \(\varepsilon_0\)</p>
+$$\frac{f(x_0+\varepsilon)-f(x_0)}{\varepsilon}>K/2$$
+<p>If \(\varepsilon>0\), then</p>
+$$f(x_0+\varepsilon)>f(x_0)+(K/2)\varepsilon>f(x_0)$$
+<p>If \(\varepsilon<0\), then</p>
+$$f(x_0+\varepsilon)\lt f(x_0)+(K/2)\varepsilon\lt f(x_0)$$
+<p>Thus \(x_{0}\) is not a local or global maximum or minimum of \(f\).</p>
+</div>
+<h3>罗尔定理</h3>
+<p>如果：</p>
+<ol>
+<li>函数\(f(x)\)在\([a,b]\)上连续</li>
+<li>函数\(f(x)\)在\((a,b)\)内可导</li>
+<li>\(f(a)=f(b)\)</li>
+</ol>
+<p>那么：<br/>至少存在一点\(\xi\in (a,b)\)，使得\(f'(\xi)=0\)</p>
+<p>证明：</p>
+<h3>拉格朗日中值定理</h3>
+<div style="overflow:auto;">
+$$f(b)-f(a)=f'(\xi)(b-a)$$
+$$f'(\xi)=\frac{f(b)-f(a)}{b-a}$$
+</div>
+</div>
+</body>
+</html>
