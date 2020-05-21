@@ -76,36 +76,41 @@
 <p>speculators</p>
 <p>使用短期投资策略的投资者们<br/>对市场的影响<br/>speculative bubble(把价格炒高了) 让市场大起大落</p>
 <p>dericatives</p>
-<p>futures fowards options swaps 都可以用</p>
+<p>futures, fowards, options, swaps 都可以用</p>
 <p>futures trades on exchange<br/>fowards trades OTC</p>
 <h3>future contracts 期货合约</h3>
 <ul>
 <li>standardized contracts</li>
 <li>central market place,transparent pricing</li>
 <li>cleaninghouse security,uniform size, daily liquidity</li>
+<li>Trade on Exchange</li>
 </ul>
-<p>foward contracts 远期合约</p>
+<h3>foward contracts 远期合约</h3>
 <ul>
 <li>adhoc contracts negotiated between two parties</li>
 <li>flexibility regarding details</li>
+<li>OTC (over-the-conter)</li>
 </ul>
 <h3>Cost of Carray /Carrying Cost</h3>
+<p>和金融资产的不同，金融资产的Cost of Carry = (Matain position in spot market) - (Maintain position in foward market)</p>
 <div style="overflow:auto;">
-    $$\text{Carrying Cost} = \text{Foward Price} - \text{Spot Commodity Price}$$
+    $$\text{Carrying Cost} = \text{Foward Price} - \text{Spot Commodity Price(现货价格)}$$
 </div>
+<p>Foward Price:远期价格，今天约定未来获得货物时支付的货款</p>
     <p>the cost incurred as a result of an investment position. <br/>In the commodities markets, the cost of carry includes the cost of necessary insurances and the expense of storing the physical commodity over a period of time<br/>In capital markets, the cost of carry is the difference between the yield generated from the security and the cost of entering and maintaining the position.</p>
 <h3>Benefits and Costs of direct ownership</h3>
 <table>
-<tr><td></td><td>Real Assets</td><td>Financial Assets</td></tr>
+<tr><td></td><td>Real Assets(从Spot Market买入实物)</td><td>Financial Assets</td></tr>
 <tr><td>Benefits</td><td>Convenience(y)</td><td>Dividends and Coupons(d)</td></tr>
 <tr><td>Costs</td><td>Interesr(r)+Storage(c)</td><td>Interesr(r)+Custody(zero)</td></tr>
 </table>
-<p>convenience yield: the economic benefit that the holder of an inventory in the commodity receives from directly holding the inventory rather than having a long position in a forward contract on the commodity</p>
+<p>convenience yield: the economic benefit that the holder of an inventory in the commodity receives from directly holding the inventory rather than having a long position in a forward contract on the commodity<br/>有时需要持有commodity的一方将commodity卖出，来将市场清空，防止套利发生；但是往往当他们可以被用于生产活动时，如果库存充足，有人愿意清空市场，但是库存紧张时，大部分人用来生产活动，有套利机会也不愿意售卖，市场不能清空，加入这个强制他们清空市场。</p>
 <h3>Price of foward contracts</h3>
 <div style="overflow:auto;padding:0.2em">
     $$F(T) = S \times e^{[(r+c-y)\times T]}$$
 </div>
-<p>r (融资的)利率, c 存储费率，y 方便率<br/>注意要统一时间单位</p>
+<p>r (融资的)利率, c 存储费率，y 方便率，S 货物现价<br/>注意 T要用年当单位</p>
+<p><b>含义</b>这个公式的意思不是持有Forward要支付储存费，而是持有现货的人要付储存费，持有forward不用付储存费，所以两者折算中，Foward的价格直接补偿给持有现货的储存费，而forward本身没有储存费。Convenience yield时持有现货享受的，持有期货不享受，所以两者折算中，要在价格中补偿给远期，但是远期本身没有Convenience yield。</p>
 <p>Returns on foward contract<br/>forward contracts may be used by beta drivers or alpha drivers</p>
 <p>Basis<br/>Basis = S - F(T)</br>equals to (-1) * Carrying Cost</p>
 <p>Calendar spread<br/>Calendar spread = F(T+t) - F(t)</p>
