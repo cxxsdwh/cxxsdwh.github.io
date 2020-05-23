@@ -67,10 +67,45 @@ $$f'(\xi)=\frac{f(b)-f(a)}{b-a}$$
 </div>
 <p>证明：</p>
 <div style="overflow:auto;">
-    $$\text{Let } \phi(x)=f(x)-\left(f(a)+\frac{f(b)-f(a)}{b-a}\right)$$
+    $$\text{Let } \phi(x)=f(x)-\left(f(a)+\frac{f(b)-f(a)}{b-a}(x-a)\right)$$
 $$\phi(a)=\phi(b)=0$$
+</div>
 <p>由罗尔定理，\(\xi\in (a,b)\)，使得\(\phi'(\xi)=0\)，即</p>
 $$f'(\xi)=\frac{f(b)-f(a)}{b-a}$$
+<h3>柯西中值定理</h3>
+<p>如果\(f(x)\)和\(\phi(x)\)满足</p>
+<ol>
+<li>在区间\([a,b]\)上连续</li>
+<li>在区间\((a,b)\)内可导，并且\(\phi'(x)\ne0,\forall x \in(a,b)\)
+    <br/>注意：这个条件保证了\(\phi'(\xi)\ne0\)也保证了\(\phi(a)-\phi(b)\ne0\)</li>
+</ol>
+<p>那么至少存在一点\(\xi\in (a,b)\)，使得$$\frac{f'(\xi)}{\phi'(\xi)}=\frac{f(b)-f(a)}{\phi(b)-\phi(a)}$$</p>
+<h4>Proof:</h4>
+<div style="overflow:auto;">
+$$\text{Let } F(x)=f(x)-\left(f(a)+\frac{f(b)-f(a)}{\phi(b)-\phi(a)}(\phi(x)-\phi(a))\right)$$
+$$F(a)=F(b)=0$$
+</div>
+<p>由罗尔定理，\(\xi\in (a,b)\)，使得\(F'(\xi)=0\)，即</p>
+$$f'(\xi)-\frac{f(b)-f(a)}{\phi(b)-\phi(a)}\phi'(\xi)=0$$
+<h3>0/0型 洛必达法则</h3>
+<p>如果\(f(x),g(x)\)在\((a,a+\delta)\)内满足</p>
+<ol>
+<li>\(\lim\limits_{x\rarr a^+}f(x)=\lim\limits_{x\rarr a^+}g(x)=0\)</li>
+<li>\(f(x),g(x)\)在\((a,a+\delta)\)内可导，且\(g'(x)\ne0\)</li>
+<li>\(\lim\limits_{x\rarr a^+}\frac{f'(x)}{g'(x)}\)存在(或\(\lim\limits_{x\rarr a^+}\frac{f'(x)}{g'(x)}=+\infty\))</li>
+</ol>
+<p>那么\(\lim\limits_{x\rarr a^+}\frac{f(x)}{g(x)}=\lim\limits_{x\rarr a^+}\frac{f'(x)}{g'(x)}\)</p>
+<h4>证明：</h4>
+<div style="overflow:auto;">
+    $$\text{let }F(x)=\begin{cases}f(x)&, a\lt x\lt a+\delta\\
+    0&, x=a\end{cases}$$
+    $$\text{let }G(x)=\begin{cases}g(x)&, a\lt x\lt a+\delta\\
+    0&, x=a\end{cases}$$
+    <p>\(\forall x \in (a,a+\delta)\)，\(F(x),G(x))应用柯西中值定理</p>
+    $$\frac{F(x)-F(a)}{G(x)-G(a)}=\frac{F'(\xi)}{G'(\xi)},a\lt\xi\lt x$$
+    $$\frac{F'(\xi)}{G'(\xi)}=\frac{f'(\xi)}{g'(\xi)}=\frac{f'(x+\theta(x-a))}{g'(x+\theta(x-a))},0\lt\theta\lt 1$$
+    $$\lim\limits_{x\rarr a^+}\frac{f(x)}{g(x)}=\lim\limits_{x\rarr a^+}\frac{f'(x+\theta(x-a))}{g'(x+\theta(x-a))}=\lim\limits_{x\rarr a^+}\frac{f'(x)}{g'(x)}$$
+    <p>最后一步看成复合函数，如果两个函数的极限都存在，那么复合函数的极限存在</p>
 </div>
 </details>
 </div>
